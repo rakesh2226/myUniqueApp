@@ -15,13 +15,13 @@
          * but this is easier to maintain.
          */ 
         'app.core',
-        'app.widgets',
+        // 'app.widgets',
 
-        /*
-         * Feature areas
-         */
-        'app.avengers',
-        'app.dashboard',
+        
+        //  * Feature areas
+         
+        // 'app.avengers',
+        // 'app.dashboard',
         'app.layout'
     ]);
 
