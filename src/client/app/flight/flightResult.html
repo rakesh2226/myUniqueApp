@@ -1,0 +1,49 @@
+<section id="speaker-view" class="mainbar"
+  data-ng-controller="FlightResult as fs">
+  <section class="matter">
+    <div class="container">
+      <div class="search-wrapper">
+        <div class="main-title"> Flight Search Engine</div>
+        <div id="right-side" >
+          <div class="error" ng-show="errorMsg">{{errorMsg}}</div>
+          <div class="header" ng-show="results">
+            <div class="left">
+              <span>{{cityCode[searchObj['originCity']]}}</span>&nbsp;&gt;
+              <span>{{cityCode[searchObj['destCity']]}}</span>
+              <span ng-show="searchObj.returnDate">&gt;&nbsp;{{cityCode[searchObj['originCity']]}}</span>
+            </div>
+            <div class="right">
+              <span>Depart :{{searchObj.depDate | date:"dd MMM yyyy"}}</span><br>
+              <span ng-show="searchObj.returnDate">Return :{{searchObj.returnDate | date:"dd MMM yyyy"}}</span>
+            </div>
+          </div>
+          <div class="details" ng-repeat="dataObj in fs.results track by $index">
+            <div class="detail-left">
+              <table class="detail-table">
+                <tr class="price">
+                  <td colspan="2">
+                    {{dataObj.price | currency:"Rs. "}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="result-div" ng-repeat="fObj in dataObj.routes">
+                      <table class="result-table">
+                        <tr><td>{{fObj.flightNo}}</td></tr>
+                        <tr><td>{{fObj.via.split(',').join(' > ')}}</td></tr>
+                        <tr><td>Depart: {{fObj.depart}}</td></tr>
+                        <tr><td>Arrive: {{fObj.arrive}}</td></tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="detail-right">
+              <input type="submit" class="searchBtn" id="bookFlight" value="Book this flight" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>

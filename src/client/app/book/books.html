@@ -1,0 +1,17 @@
+<section id="speaker-view" class="mainbar" ng-controller = "Books as b">
+  <section class="matter">
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class="panel-heading" rk-widget-header-click="b.headerClick(b)">All Books {{b.headerText}}</div>
+        <rk-font-scale> </rk-font-scale>
+        <div class="panel-body">
+           <div style="padding:1em;" ng-repeat="book in b.books track by $index"> {{book.title}} 
+              <rk-widget-close remove-method="b.deleteRec(book)" edit-method="b.editRec(book.bookId)"> </rk-widget-close> 
+           </div>
+            
+          </div>
+          <div ng-show="b.errorMsg">{{b.errorMsg}}</div>
+        </div>
+      </div>
+    </section>
+  </section>

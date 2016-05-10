@@ -15,7 +15,7 @@
             info    : info,
             success : success,
             warning : warning,
-
+            debug : debug,
             // straight to console; bypass toastr
             log     : $log.log
         };
@@ -41,6 +41,10 @@
         function warning(message, data, title) {
             // toastr.warning(message, title);
             $log.warn('Warning: ' + message, data);
+        }
+        function debug(message, data, title) {
+           // toastr.error(message, title);
+            $log.debug('Debug: ' + message, data);
         }
     }
 }());

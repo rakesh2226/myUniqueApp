@@ -15,7 +15,10 @@
     "tests"
   ],
   "devDependencies": {
-    "angular-mocks": "~1.5.5"
+    "angular-mocks": "~1.5.5",
+    "bower": "*",
+    "install": "~1.0.4",
+    "ng-resource": "~0.0.2"
   },
   "dependencies": {
     "angular": "~1.5.5",

@@ -1,0 +1,56 @@
+<section id="speaker-view" class="mainbar"
+  data-ng-controller="FlightSearch as fs">
+  <section class="matter">
+    <div class="container">
+      <div class="widget wgreen">
+        <div> Search Flight</div>
+        <div class="widget-content user">
+          <form name="searchForm" style="height:100%" ng-submit="onSubmit()">
+            <div class="form-group">
+              <label class="control-label">Origin City</label>
+              <div>
+                <input class="form-control"
+                data-ng-model="fs.searchObj.originCity"
+                data-z-validate
+                placeholder="Enter Origin City"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Destination City</label>
+              <div>
+                <input class="form-control"
+                data-ng-model="fs.searchObj.destCity"
+                data-z-validate
+                placeholder="Enter Destination City"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Departure Date</label>
+              <div>
+                <input class="form-control"
+                data-ng-model="fs.searchObj.deptDate"
+                data-z-validate
+                placeholder="Email"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Passengers</label>
+              <div>
+                <select class="form-control" name="passengerSelect" ng-model="passengerSelect">
+                  <option value="">Passengers</option>
+                  <option value="adult-1">1</option>
+                  <option value="adult-2">2</option>
+                  <option value="adult-3">3</option>
+                  <option value="adult-4">4</option>
+                  <option value="adult-5">5</option>
+                </select>
+              </div>
+            </div>
+            
+            <input type="submit" class="searchBtn" id="searchBtn" value="Search" />
+            </from>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
